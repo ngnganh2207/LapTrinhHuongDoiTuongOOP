@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Funny Circles</title>
+</head>
+<body>
+<button id="button" onclick="drawMultiCircle()">I'm Here</button>
+<canvas id="myCanvas" width="1368px" height="768px" style="border: 1px solid #d3d3d3" ;></canvas>
+<script>
+    class Circle {
+        x;
+        y;
+        radius;
+        color;
+
+        constructor(x, y, radius, color) {
+            this.x = x;
+            this.y = y;
+            this.radius = radius;
+            this.color = color;
+        }
+
+        veHinhTron() {
+            var ctx = document.getElementById('myCanvas').getContext('2d');
+            ctx.beginPath();// bắt đầu vẽ
+            ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
+            ctx.fillStyle = this.color;
+            ctx.fill();
+        }
+
+
+    }
+
+    // let hinhTron1 = new Circle(500,500,80);
+    // hinhTron1.veHinhTron();
+    // var radius=Math.floor(Math.random()*80);
+    //  var hinhTron2= new Circle(500,500,radius);
+    //  hinhTron2.veHinhTron();
+
+    function getRandomColor() {
+        var red = Math.floor(Math.random() * 255);
+        var green = Math.floor(Math.random() * 255);
+        var blue = Math.floor(Math.random() * 255);
+        return "rgb(" + red + "," + blue + "," + green + ")"; //rgb(red,blue,grenn)
+    }
+    function getRandomColor1() {
+        var red = Math.floor(Math.random() * 255);
+        var green = Math.floor(Math.random() * 255);
+        var blue = Math.floor(Math.random() * 255);
+        return "rgb(" + red + "," + blue + "," + green + ")"; //rgb(red,blue,grenn)
+    }
+    let x= Math.random()*window.innerWidth;//window.innerWidth và window.innerHeight : 2 thuộc tính trả về kích thước của cửa sổ trình duyệt.
+    let y=Math.random()*window.innerHeight;
+    let color = getRandomColor();
+    let radius = Math.floor(Math.random() * 80);// Mat.random sinh ra số thực từ 0->1, math.floor làm tròn( ví dụ 0,1 ->1)* 80-> từ 0->80
+    var hinhTron3 = new Circle(x, y, radius, color,);
+    hinhTron3.veHinhTron();
+
+    let x1= Math.random()*window.innerWidth;
+    let y1=Math.random()*window.innerHeight;
+    let color1 = getRandomColor1();
+    let radius1 = Math.floor(Math.random() * 80);
+    var hinhTron4= new Circle(x1,y1,radius1,color1);
+    hinhTron4.veHinhTron();
+    function drawMultiCircle() {
+        for (let i = 0; i < 50; i++) {
+            let x2 = Math.random() * window.innerWidth;
+            let y2 = Math.random() * window.innerHeight;
+            let color2 = getRandomColor();
+            let radius2 = Math.floor(Math.random() * 80);
+            let hinhTron5 = new Circle(x2, y2, radius2, color2);
+            hinhTron5.veHinhTron();
+        }
+    }
+   /* drawMultiCircle()
+    function drawMultiCircle(){
+        for(let i=0;i<100;i++){
+            let x2=Math.random()*window.innerWidth;
+            let y2=Math.random()*window.innerHeight;
+            let color2=getRandomColor();
+            let radius2=Math.floor(Math.random()*80);
+            let hinhTron5=new Circle(x2,y2,radius2, color2);
+            hinhTron5.veHinhTron();
+        }
+    }*/
+
+
+
+
+</script>
+
+
+</body>
+</html>
