@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Student(id,name,address){//định nghĩa lớp Student vs các thuộc tính...
+        this.id=id;// có thể ghi id=id1
+        this.name=name;
+        this.address=address;
+        this.getInfor=function (){
+            return "Id="+ this.id+" Name"+this.name+" Address"+this.address;
+        }
+    }
+    var student= new Student(67 ," Nguyễn Văn A "," Mexico ");//Khởi tạo đối tượng
+    console.log(student.getInfor());//thực thi phương thức getInfor() thông qua đối tượng student
+</script>
+</body>
+</html>

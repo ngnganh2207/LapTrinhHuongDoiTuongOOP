@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thực Hành Xây Dựng Lớp Date</title>
+</head>
+<body>
+<script>
+    class Date{
+        day;
+        month;
+        year;
+        constructor(day,month,year) {// 3 tham số là giÁ TRỊ ban đầu của thuộc tính.Constructor khởi tạo object
+            this.day=day;// this.day là chỉ đến thuộc tính của lớp,của đối tượng. ở đâu có từ this là chỉ đến thuôc tính của đối tượng của lớp
+            this.month=month;
+            this.year=year;
+        }
+        getDay(){
+            return this.day;// trả về giá trị thuộc tính của đối tượng
+        }
+        getMonth(){
+            return this.month;
+        }
+        getYear(){
+            return this.year;
+        }
+        setDay(day){
+            this.day=day;
+        }
+        setMonth(month){
+            this.month=month;
+        }
+        setYear(year){
+            this.year=year;
+        }
+        setDate(day,month,year){
+            this.day=day;
+            this.month=month;
+            this.year=year;
+        }
+        toString(){
+            return this.day+"/"+this.month+'/'+this.year;
+        }
+    }
+    var date= new Date(24,3,2021);
+    let a= date.getDay();
+    let b= date.getMonth();
+    let c= date.getYear();
+    //alert(a+ '/' + b+'/'+ c);
+    console.log(date);
+    date.setDay(10);
+    date.setMonth(5);
+    date.setYear(2020);
+    console.log(date)
+    let a1=date.getDay();
+    let a2=date.getMonth();
+    let a3=date.getYear();
+    //alert(a1+ '/' + a2+'/'+ a3);
+    date.setDate(12,6,2022);
+    let b1=date.getDay();
+    let b2=date.getMonth();
+    let b3=date.getYear();
+    alert(b1+ '/' + b2+'/'+ b3);
+    console.log(date.toString());
+
+</script>
+</body>
+</html>

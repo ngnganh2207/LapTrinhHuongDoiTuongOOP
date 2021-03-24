@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var student={  // khởi tạo đối tượng.
+        id: 1,
+        name: "Nguyen Van A",
+        address: "Ha Noi",
+        getInfor: function (){  //phương thức getInfor trả về thông tin của đối tượng.
+            return "Id"+this.id+"Name"+this.name+"Address"+this.address;
+        }
+    }
+    console.log(student.name);// gọi thuộc tính name thông qua đối tượng student
+    console.log(student.getInfor());// gọi phương thức getInfor thông qua đối tượng student
+</script>
+</body>
+</html>

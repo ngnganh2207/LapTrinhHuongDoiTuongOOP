@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TEST LẬP TRÌNH HƯỚNG ĐỐI TƯỢNG</title>
+</head>
+<body>
+<p id="result">100</p>
+<button onclick="anTao()">Click to eat apple</button>
+<script>
+   class Apple { //Khai báo class Apple gồm thuộc tính cân nặng
+        weight; // thuộc tính
+        constructor(w) {//phương thức đặc biệt để khởi tạo 1 object và được tạo ở trong class
+            this.weight = w; //truy suất thuộc tính weight bằng tham số w, this.weight là để gán giá trị cho cái thuộc tính weight
+        }
+        // hàm này giảm số lượng táo
+        //trong opp thì function gọi là phương thức, trong LT hướng thủ tục thì function gọi là hàm.
+        decrease=function () { //hoặc có thể viết decrease(){   }decrease( tên phương thức)
+            this.weight--;   // truy suất tới thuộc tính weight, trỏ tới thuộc tính weight ở trong class apple để giảm đi
+        }
+        isEmpty() {//1 phương thức trả về giá trị , kiểm tra tính đúng sai.
+            if(this.weight > 0){
+                return true;
+            }
+            return false;
+        }
+        getWeight() { //lấy giá trị của trọng lượng
+            return this.weight;
+        }
+
+        setWeight(weight){
+            this.weight = weight;
+        }
+    }
+    class Human{ //class về người
+        name;// các thuộc tính
+        gender;// thuộc tính
+        weight;//thuộc tính
+        constructor(name,gender,weight) {// khởi tạo object
+            this.weight = weight;// this.weight là để gán giá trị cho cái thuộc tính weight
+            this.gender = gender;
+            this.name = name;
+        }
+        eat = function (apple) {// phương thức eat, tham số truyền vào là apple
+            apple.weight--;// ...trỏ tới weight , giảm 1 đơn vị//khi nạp quả táo vào, quatao.weight sẽ trỏ tới thuộc tính weight của quả táo để trừ đi 1
+        }
+        checkApple = function (apple) {//phương thức checkApple. tham số là apple
+            var isEmpty = apple.isEmpty();//biến isEmpty chứa kết quả của phương thức isEmpty ở trên
+            return isEmpty;// trả về kết quả biến isEmpty
+        }
+    }
+
+    var quaTao = new Apple(100);// khởi tạo 1 đối tượng quả táo với tham số truyền vào là 100 thuộc lớp Apple ở trên.
+    var human = new Human("sonmc","name","65kg"); // khởi tạo đối tượng Human với 3 tham số somc, name, 65kg
+    function anTao() { // hàm ăn táo  khi thực hiện onclick vào nút
+        human.eat(quaTao);//biến human trỏ đến phương thức ăn táo với giá trị táo khởi tạo ban đầu là 100.
+        document.getElementById("result").innerHTML = quaTao.weight;// hiện thị kết quả.
+    }
+    human.eat(quaTao);
+</script>
+</body>
+</html>
