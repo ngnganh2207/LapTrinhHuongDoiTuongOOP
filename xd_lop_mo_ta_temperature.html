@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây Dựng Lớp Mô Tả Hình Chữ Nhật</title>
+</head>
+<body>
+
+
+<script>
+    class Temperature{
+        doC;
+        constructor(doC) {
+            this.doC=doC;
+        }
+        getDoC(){
+            return this.doC;
+        }
+        setDoC(doC){
+            this.doC= doC;
+        }
+        changeCtoF(){
+            return this.doC*1.8+32;
+        }
+        changeCtoK(){
+            return this.doC+273.15;
+        }
+
+    }
+    let nhietdo= new Temperature(25);
+    let doF=nhietdo.changeCtoF();
+    let doK=nhietdo.changeCtoK();
+    console.log("Độ C là: "+ nhietdo.getDoC());
+    document.write("Độ F là: "+doF+"<br/>" );
+    document.write("Độ K là "+doK);
+</script>
+</body>
+</html>
