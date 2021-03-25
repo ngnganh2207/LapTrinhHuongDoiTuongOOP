@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây Dựng Lớp Mô Tả Điện Thoại</title>
+</head>
+<body>
+
+
+<script>
+    class DienThoai{
+        status;
+        trangthaipin;
+        vungnholuutndangsoan;
+        vungnhohopthuden;
+        vungnhotindagui;
+        constructor(trangthaipin,vungnholuutndangsoan,vungnhohopthuden,vungnhotindagui) {
+            this.status = true;
+            this.trangthaipin=trangthaipin;
+            this.vungnhohopthuden=vungnhohopthuden;
+            this.vungnholuutndangsoan=vungnholuutndangsoan;
+            this.vungnhotindagui=vungnhotindagui;
+        }
+        checkOnOff(){
+            if(this.trangthaipin>0) {
+                if (this.status) {
+                    alert("ĐT đang bật");
+                } else {
+                    alert("ĐT đang tắt");
+                }
+            }else{
+                alert("ĐT hết pin,cắm sạc vào");
+            }
+
+        }
+        turnOn(){
+                this.status = true;
+        }
+        turnOff(){
+            this.status=false;
+            this.trangthaipin--;
+        }
+        sacpin(){
+            this.trangthaipin++;
+        }
+        soantinnhan(tindangsoan){
+            if (this.status) {
+                this.vungnholuutndangsoan.push(tindangsoan);
+                this.trangthaipin--;
+            }else{
+                alert('Turn ON');
+            }
+        }
+        nhantinnhantudtkhac(tinnhannhan,dtkhac){
+            this.vungnhohopthuden.push(tinnhannhan);
+            dtkhac.vungnhotindagui.push(tinnhannhan);
+            this.trangthaipin --;
+        }
+        xemhopthuden(){
+            console.log(this.vungnhohopthuden);
+            this.trangthaipin --;
+        }
+        xemtindagui(){
+            console.log(this.vungnhotindagui);
+            this.status --;
+        }
+    }
+    let nokia= new DienThoai(0,[],[],[]);
+    let iPhone= new DienThoai(96,[],[],[]);
+    //nokia.checkOnOff();
+    //iPhone.checkOnOff();
+    nokia.turnOff();
+    nokia.checkOnOff();
+    nokia.sacpin();
+    alert('Trang thái pin:'+nokia.trangthaipin);
+    nokia.soantinnhan('ABC XYZ..dàdsfdfd');
+    alert(nokia.vungnholuutndangsoan);
+    nokia.nhantinnhantudtkhac('xinchao',iPhone);
+    document.write('tin nhan nhận của nokia '+ nokia.vungnhohopthuden+ "</br>"+" tin đã gửi của iPhone là "+ iPhone.vungnhotindagui)
+    iPhone.nhantinnhantudtkhac("Good Morning",nokia);
+    nokia.xemhopthuden();//xin chao
+    nokia.xemtindagui(); //goodmorning
+    iPhone.xemhopthuden();//good morning
+    iPhone.xemtindagui();//xin chao
+   console.log('Trạng thái pin: '+ nokia.trangthaipin);
+    /*nhantinnhantudtkhac(tinnhannhan,dtkhac){
+        this.vungnhohopthuden.push(tinnhannhan);
+        dtkhac.vungnhotindagui.push(tinnhannhan);
+    }*/
+</script>
+</body>
+</html>
