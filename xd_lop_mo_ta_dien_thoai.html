@@ -38,7 +38,7 @@
         }
         turnOff(){
             this.status=false;
-            this.trangthaipin=this.trangthaipin - 2;
+            this.trangthaipin=this.trangthaipin --;
         }
         sacpin(){
             this.trangthaipin++;
@@ -69,7 +69,7 @@
     let iPhone= new DienThoai(96,[],[],[]);
     //nokia.checkOnOff();
     //iPhone.checkOnOff();
-    nokia.turnOff();
+    /*nokia.turnOff();
     nokia.checkOnOff();
     nokia.sacpin();
     alert('Trang thái pin:'+nokia.trangthaipin);
@@ -83,10 +83,13 @@
     iPhone.xemhopthuden();//good morning
     iPhone.xemtindagui();//xin chao
    console.log('Trạng thái pin: '+ nokia.trangthaipin);
-    /*nhantinnhantudtkhac(tinnhannhan,dtkhac){
+    /* nhantinnhantudtkhac(tinnhannhan,dtkhac){
         this.vungnhohopthuden.push(tinnhannhan);
         dtkhac.vungnhotindagui.push(tinnhannhan);
     }*/
+    nokia.checkOnOff();
+    iPhone.checkOnOff();
+
 </script>
 </body>
 </html>
