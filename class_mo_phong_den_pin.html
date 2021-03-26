@@ -56,6 +56,18 @@
     }
     //var battery= new Battery(5);
     //var flashlamp= new FlashLamp(true,battery);
+    let battery= new Battery(100);
+    console.log(battery);
+    battery.decreaseEnergy();
+    console.log(battery);
+    let a= battery.getEnergy();
+    console.log(a);
+    let flashlamp= new FlashLamp(1,a);
+   // flashlamp.turnOn();
+    let b=flashlamp.getBatteryInfo();
+    console.log(b);
+
+
 
 
 </script>
